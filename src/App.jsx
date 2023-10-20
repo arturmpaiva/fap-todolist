@@ -32,10 +32,12 @@ function App(){
     else {return JSON.parse(localValues)}
   });
   
-  useEffect(() => {
+  useEffect( () => {
+    console.log('useEffect');
     localStorage.setItem("TODOS", JSON.stringify(todos))
-  }, [todos]);
+  }, [todos])
 
+   
   const handleAddTodo = (todo) => {
     setTodos((prevTodos) => [
       ...prevTodos,
